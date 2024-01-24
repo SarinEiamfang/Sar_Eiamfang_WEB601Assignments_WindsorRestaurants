@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContentList } from "./helper-files/content-list";
+import { ContentList } from "../helper-files/content-list";
 
 @Component({
   selector: 'app-content-card',
@@ -44,7 +44,7 @@ export class ContentCardComponent {
       title: "Spago",
       description: "Italian, Pizza",
       creator: "690 Erie St E",
-      imgURL: "https://www.visitwindsoressex.com/wp-content/uploads/2018/04/meat2.jpg",
+      imgURL: "https://ca-times.brightspotcdn.com/dims4/default/e8391a4/2147483647/strip/true/crop/1023x575+0+0/resize/1200x674!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fad%2Fea%2F2d474f7be1521e070a73fbd17844%2Fla-1561580696-z4n2t6v0ye-snap-image",
       type: "C$0 - C$50"
     });
 
@@ -53,7 +53,7 @@ export class ContentCardComponent {
       title: "The Cook's Shop Restaurant",
       description: "Italian, Tuscan",
       creator: "683 Ouellette Avenue",
-      imgURL: "https://www.visitwindsoressex.com/wp-content/uploads/2018/04/meat2.jpg",
+      imgURL: "https://cdn.hourdetroit.com/wp-content/uploads/sites/20/2022/11/DSCF2897-1024x683.jpg",
       type: "C$10 - C$30"
     });
   }

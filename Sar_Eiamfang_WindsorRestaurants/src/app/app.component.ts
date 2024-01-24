@@ -11,7 +11,7 @@ import { ContentCardComponent } from './content-card/content-card.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = "Sarin Windsor Restaurants";
+  title = "Windsor Top 5 Restaurants";
   
   }
 

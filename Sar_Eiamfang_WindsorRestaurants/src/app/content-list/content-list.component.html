@@ -1,1 +1,11 @@
-<p>content-list works!</p>
+<div *ngFor="let contentItem of contentItems; let isFirst = first" class="content-card" [class.first-item]="isFirst">
+    
+    <img src="{{ contentItem.imgURL }}" height="300px" (click)="showContentDetails(contentItem)">
+    <h1>{{ contentItem.title }}</h1>
+    <h3> {{ contentItem.description }} </h3>
+    <span> <strong>Address:</strong> {{ contentItem.creator }} </span><br/>
+    <span *ngIf="contentItem.type"> <strong>Price: </strong> {{ contentItem.type }} </span><br/>
+    <span *ngIf="contentItem.tags && contentItem.tags.length > 0">
+        <strong>Tags:</strong> {{ contentItem.tags.join(', ') }} </span>
+
+</div>

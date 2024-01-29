@@ -71,7 +71,7 @@ export class ContentListComponent implements OnInit {
     ];
   }
 
-  showContentDetails(contentItem: Content): void {
+  displayContentDetails(contentItem: Content): void {
     console.log(`ID: ${contentItem.id}, Title: ${contentItem.title}`);
   }
 

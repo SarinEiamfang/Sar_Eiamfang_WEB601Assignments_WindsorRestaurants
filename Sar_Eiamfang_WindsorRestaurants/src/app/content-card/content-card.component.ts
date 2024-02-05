@@ -57,5 +57,7 @@ export class ContentCardComponent {
   //     type: "C$10 - C$30"
   //   });
   // }
+ngInOnit: any {
 
+}
 }

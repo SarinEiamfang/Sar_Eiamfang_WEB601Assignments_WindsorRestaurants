@@ -20,7 +20,7 @@ export class ContentListComponent implements OnInit {
         description: "Mediterranean, Middle Eastern",
         creator: "420 Tecumseh Rd E",
         imgURL: "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/southwestontario/Image-1-00bc39725056b3a_00bc3a72-5056-b3a8-494b96f577074523.jpg",
-        type: "C$10 - C$30",
+        type: "C$20 - C$30",
         tags: ["Mediterranean", "Middle Eastern"]
       },
       {
@@ -38,7 +38,6 @@ export class ContentListComponent implements OnInit {
         description: "Italian, Canadian",
         creator: "804 Erie St E",
         imgURL: "https://thedrivemagazine.com/wp-content/uploads/sites/46/2023/01/Mezzo-_1_long.jpg",
-        type: "C$0 - C$30",
         tags: ["Italian", "Canadian"]
       },
       {
@@ -47,7 +46,6 @@ export class ContentListComponent implements OnInit {
         description: "Italian, Pizza",
         creator: "690 Erie St E",
         imgURL: "https://ca-times.brightspotcdn.com/dims4/default/e8391a4/2147483647/strip/true/crop/1023x575+0+0/resize/1200x674!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fad%2Fea%2F2d474f7be1521e070a73fbd17844%2Fla-1561580696-z4n2t6v0ye-snap-image",
-        type: "C$0 - C$50",
         tags: ["Italian", "Pizza"]
       },
       {
@@ -56,7 +54,7 @@ export class ContentListComponent implements OnInit {
         description: "Italian, Tuscan",
         creator: "683 Ouellette Avenue",
         imgURL: "https://cdn.hourdetroit.com/wp-content/uploads/sites/20/2022/11/DSCF2897-1024x683.jpg",
-        type: "C$10 - C$30",
+        type: "C$20 - C$30",
         tags: ["Italian", "Tuscan"]
       },
       {
@@ -67,6 +65,15 @@ export class ContentListComponent implements OnInit {
         imgURL: "https://mazaar.ca/wp-content/uploads/2022/09/Mazaar-Lebanese-Cuisine-Gourmet-Dish-1229x1536.jpg",
         type: "C$20 - C$30",
         tags: ["Lebanese", "Mediterranean", "Middle Eastern"]
+      },
+      {
+        id: 7,
+        title: "The Keg Steakhouse + Bar",
+        description: "American, Steakhouse, Bar",
+        creator: "1 Riverside Dr W Ste 101",
+        imgURL: "https://resizer.otstatic.com/v2/photos/wide-xlarge/3/30103972.jpg",
+        type: "C$42 - C$67",
+        tags: ["American", "Steakhouse", "Bar"]
       }
     ];
   }

@@ -11,6 +11,6 @@ import { ContentListComponent } from './content-list/content-list.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = "Windsor Top 5 Restaurants";
+  title = "Windsor Top Restaurants";
   }
 

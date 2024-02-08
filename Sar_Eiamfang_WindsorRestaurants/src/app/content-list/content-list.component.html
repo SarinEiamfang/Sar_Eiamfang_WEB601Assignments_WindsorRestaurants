@@ -1,11 +1,15 @@
-<div *ngFor="let contentItem of contentItems; let isFirst = first" class="content-card" [class.first-item]="isFirst">
-    
-    <img src="{{ contentItem.imgURL }}" height="300px" (click)="displayContentDetails(contentItem)">
-    <h1>{{ contentItem.title }}</h1>
-    <h3> {{ contentItem.description }} </h3>
-    <span> <strong>Address:</strong> {{ contentItem.creator }} </span><br/>
-    <span *ngIf="contentItem.type"> <strong>Price: </strong> {{ contentItem.type }} </span><br/>
-    <span *ngIf="contentItem.tags && contentItem.tags.length > 0">
-        <strong>Tags:</strong> {{ contentItem.tags.join(', ') }} </span>
 
-</div>
+<input type="text" [(ngModel)]="searchTitle" placeholder="Enter title">
+<button (click)="checkTitleExistence()">Check Existence</button>
+
+<!-- Display search result message -->
+<p [ngStyle]="{'color': contentExists ? 'green' : 'red'}">{{ searchResultMessage }}</p>
+
+<h1>Empty</h1>
+<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: ' '" [contentItem] = "contentItem"></app-content-card>
+<h1>Dine in</h1>
+<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: 'Dine in'" [contentItem] = "contentItem"></app-content-card>
+<h1>Take out</h1>
+<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: 'Take out'" [contentItem] = "contentItem"></app-content-card>
+<h1>Restaurant</h1>
+<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: 'Restaurant'" [contentItem] = "contentItem"></app-content-card>

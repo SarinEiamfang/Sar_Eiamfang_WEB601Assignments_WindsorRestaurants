@@ -1,7 +1,13 @@
 
 <div>
       <div class="content-card" *ngIf="contentItem.imgURL">
-        <img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL" alt="{{ contentItem.title }}" class="content-card-image" height="200px">
+        <!-- <img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL" alt="{{ contentItem.title }}" class="content-card-image" height="200px"> -->
+
+        <img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL; else defaultImage" alt="{{ contentItem.title }}" class="content-card-image" height="200px">
+        
+        <ng-template #defaultImage>
+          <img src="https://www.freep.com/gcdn/presto/2021/08/06/PDTF/a80ae732-7235-4359-aad7-8bb59d46c2ea-bistro_on_the_river_2.jpg?width=1320&height=880&fit=crop&format=pjpg&auto=webp" height="200px" width="250px">
+        </ng-template>
 
           <h2>{{ contentItem.title }}</h2>
           <p><strong>Description:</strong> {{ contentItem.description }}</p>

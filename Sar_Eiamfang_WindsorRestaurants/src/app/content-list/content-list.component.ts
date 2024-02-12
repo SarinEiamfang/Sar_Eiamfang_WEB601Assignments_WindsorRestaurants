@@ -80,6 +80,15 @@ export class ContentListComponent implements OnInit {
         imgURL: "https://resizer.otstatic.com/v2/photos/wide-xlarge/3/30103972.jpg",
         type: "Casual",
         tags: ["American", "Steakhouse", "Bar"]
+      },
+      {
+        id: 8,
+        title: "Gladstone Common",
+        description: "Contemporary, Pub, Fusion",
+        creator: "792 Gladstone Ave",
+        imgURL: " ",
+        type: "Casual",
+        tags: ["Contemporary", "Pub", "Fusion"]
       }
     ];
   }

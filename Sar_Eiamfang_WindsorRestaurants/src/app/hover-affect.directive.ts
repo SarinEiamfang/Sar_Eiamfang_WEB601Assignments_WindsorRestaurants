@@ -4,9 +4,10 @@ import { Directive, ElementRef, Input, HostListener, Renderer2 } from '@angular/
   selector: '[appHoverAffect]',
   standalone: true
 })
+
 export class HoverAffectDirective {
   
-    @Input() affectType: 'underline' | 'bold' | 'border' = 'underline';
+    @Input() affectType: 'underline' | 'bold' = 'underline';
   
     constructor(private el: ElementRef, private renderer: Renderer2) { }
     
@@ -26,9 +27,6 @@ export class HoverAffectDirective {
         case 'bold':
           this.renderer.setStyle(this.el.nativeElement, 'font-weight', 'bold');
           break;
-        case 'border': // This effect doesn't work
-          this.renderer.setStyle(this.el.nativeElement.parentNode, 'border', '2px solid red');
-          break;
       }
     }
   
@@ -39,9 +37,6 @@ export class HoverAffectDirective {
           break;
         case 'bold':
           this.renderer.removeStyle(this.el.nativeElement, 'font-weight');
-          break;
-        case 'border': // This effect doesn't work
-          this.renderer.removeStyle(this.el.nativeElement.parentNode, 'border');
           break;
       }
     }

@@ -14,7 +14,7 @@
 <app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: 'Fine Dining'" [contentItem] = "contentItem" [ngClass]="{'fine-dining-card': true}"></app-content-card>
 
 <h1>Empty</h1>
-<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: ' '" [contentItem] = "contentItem" [ngClass]="{'empty-card': true}"></app-content-card>
+<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter" [contentItem] = "contentItem" [ngClass]="{'empty-card': true}"></app-content-card>
 
 
 

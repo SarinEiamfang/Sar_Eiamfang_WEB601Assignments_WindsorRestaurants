@@ -13,5 +13,9 @@
           <p><strong>Address:</strong> {{ contentItem.creator }}</p>
           <!-- <p *ngIf="contentItem.type"><strong>Type: </strong>{{ contentItem.type }}</p> -->
           <p *ngIf="contentItem.type" appHoverAffect><strong>Type: </strong>{{ contentItem.type }}</p>
-          <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p>
-</div>
+          <!-- <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p> -->
+          <p *ngIf="contentItem.tags && contentItem.tags.length > 0"> <strong>Tags: </strong>
+          <span *ngFor="let tag of contentItem.tags" appHoverAffect [affectType]="'bold'">{{ tag }}, </span>
+          </p>
+
+        </div>

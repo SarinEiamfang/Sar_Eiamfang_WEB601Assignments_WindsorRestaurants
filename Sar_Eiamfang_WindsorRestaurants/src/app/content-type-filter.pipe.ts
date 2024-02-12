@@ -8,8 +8,11 @@ import { Content } from './helper-files/content-interface';
 
 export class ContentTypeFilterPipe implements PipeTransform {
   
-  transform(contentItems: Content[], type: string): Content[] {
-    return contentItems.filter((contentItem) => contentItem.type?.includes(type));
+  transform(contentItems: Content[], type?: string): Content[] {
+    if(type && type!= ''){
+      return contentItems.filter((contentItem) => contentItem.type?.includes(type));
+    }
+    return contentItems.filter((contentItem) => !contentItem.type);
   }
 }
 //taking in contentarray(contentitems) and type to filter 

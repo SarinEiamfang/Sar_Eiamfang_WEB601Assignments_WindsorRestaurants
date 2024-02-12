@@ -15,3 +15,9 @@
 
 <h1>Empty</h1>
 <app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: ' '" [contentItem] = "contentItem" [ngClass]="{'empty-card': true}"></app-content-card>
+
+
+
+
+<!-- create and update a set of search result according to pipe,
+    in this case it will filter by type, then input binding = passes the value of contentItem from the parent component to the contentItem property -->

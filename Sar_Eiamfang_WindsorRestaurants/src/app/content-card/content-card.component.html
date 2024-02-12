@@ -1,9 +1,4 @@
-<!-- <div class="content-card" [ngClass]="{
-    'fashion': contentItem.type === 'Fashion',
-    'mansion': contentItem.type === 'Mansion',
-    'food': contentItem.type === 'Food',
-    'unspecified': !contentItem.type
-  }"> -->
+
 <div>
       <div class="content-card" *ngIf="contentItem.imgURL">
         <img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL" alt="{{ contentItem.title }}" class="content-card-image" height="200px">

@@ -1,15 +1,17 @@
 
+
+
 <input type="text" [(ngModel)]="searchTitle" placeholder="Enter title">
-<button (click)="checkTitleExistence()">Check Existence</button>
+<button (click)="checkTitleExist()">Check Title</button>
 
 <!-- Display search result message -->
 <p [ngStyle]="{'color': contentExists ? 'green' : 'red'}">{{ searchResultMessage }}</p>
 
+<h1>Casual</h1>
+<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: 'Casual'" [contentItem] = "contentItem" [ngClass]="{'casual-card': true}"></app-content-card>
+
+<h1>Fine Dining</h1>
+<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: 'Fine Dining'" [contentItem] = "contentItem" [ngClass]="{'fine-dining-card': true}"></app-content-card>
+
 <h1>Empty</h1>
-<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: ' '" [contentItem] = "contentItem"></app-content-card>
-<h1>Dine in</h1>
-<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: 'Dine in'" [contentItem] = "contentItem"></app-content-card>
-<h1>Take out</h1>
-<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: 'Take out'" [contentItem] = "contentItem"></app-content-card>
-<h1>Restaurant</h1>
-<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: 'Restaurant'" [contentItem] = "contentItem"></app-content-card>
+<app-content-card *ngFor=" let contentItem of contentItems | contentTypeFilter: ' '" [contentItem] = "contentItem" [ngClass]="{'empty-card': true}"></app-content-card>

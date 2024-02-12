@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-// import { NgModel } from '@angular/forms';
 import { ContentCardComponent } from '../content-card/content-card.component';  
 import { ContentTypeFilterPipe } from '../content-type-filter.pipe';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +24,7 @@ export class ContentListComponent implements OnInit {
         description: "Mediterranean, Middle Eastern",
         creator: "420 Tecumseh Rd E",
         imgURL: "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/southwestontario/Image-1-00bc39725056b3a_00bc3a72-5056-b3a8-494b96f577074523.jpg",
-        type: "Dine in",
+        type: "Fine Dining",
         tags: ["Mediterranean", "Middle Eastern"]
       },
       {
@@ -34,7 +33,7 @@ export class ContentListComponent implements OnInit {
         description: "Lebanese, Mediterranean, Grill",
         creator: "1-2651 Howard Ave",
         imgURL: "https://windsor.ctvnews.ca/content/dam/ctvnews/en/images/2023/10/1/souq-1-6585109-1696176500277.jpg",
-        type: "Take out",
+        type: "Casual",
         tags: ["Lebanese", "Mediterranean", "Grill"]
       },
       {
@@ -43,7 +42,7 @@ export class ContentListComponent implements OnInit {
         description: "Italian, Canadian",
         creator: "804 Erie St E",
         imgURL: "https://thedrivemagazine.com/wp-content/uploads/sites/46/2023/01/Mezzo-_1_long.jpg",
-        type: "",
+        type: "Fine Dining",
         tags: ["Italian", "Canadian"]
       },
       {
@@ -52,7 +51,7 @@ export class ContentListComponent implements OnInit {
         description: "Italian, Pizza",
         creator: "690 Erie St E",
         imgURL: "https://ca-times.brightspotcdn.com/dims4/default/e8391a4/2147483647/strip/true/crop/1023x575+0+0/resize/1200x674!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fad%2Fea%2F2d474f7be1521e070a73fbd17844%2Fla-1561580696-z4n2t6v0ye-snap-image",
-        type:  "",
+        type:  "Fine Dining",
         tags: ["Italian", "Pizza"]
       },
       {
@@ -61,7 +60,7 @@ export class ContentListComponent implements OnInit {
         description: "Italian, Tuscan",
         creator: "683 Ouellette Avenue",
         imgURL: "https://cdn.hourdetroit.com/wp-content/uploads/sites/20/2022/11/DSCF2897-1024x683.jpg",
-        type: "Restaurant",
+        type: "",
         tags: ["Italian", "Tuscan"]
       },
       {
@@ -70,7 +69,7 @@ export class ContentListComponent implements OnInit {
         description: "Lebanese, Mediterranean, Middle Eastern",
         creator: "372 Ouellette Ave",
         imgURL: "https://mazaar.ca/wp-content/uploads/2022/09/Mazaar-Lebanese-Cuisine-Gourmet-Dish-1229x1536.jpg",
-        type: "Dine in",
+        type: "",
         tags: ["Lebanese", "Mediterranean", "Middle Eastern"]
       },
       {
@@ -79,7 +78,7 @@ export class ContentListComponent implements OnInit {
         description: "American, Steakhouse, Bar",
         creator: "1 Riverside Dr W Ste 101",
         imgURL: "https://resizer.otstatic.com/v2/photos/wide-xlarge/3/30103972.jpg",
-        type: "Take out",
+        type: "Casual",
         tags: ["American", "Steakhouse", "Bar"]
       }
     ];
@@ -89,15 +88,14 @@ export class ContentListComponent implements OnInit {
     console.log(`ID: ${contentItem.id}, Title: ${contentItem.title}`);
   }
 
-  searchTitle: string = '';
 
-  // Variable to display the search result message
+  searchTitle: string = '';
   searchResultMessage: string = '';
   contentExists: boolean = false;
-  // ... other component logic
+
 
   // Function to check if a Content item with the entered title exists
-  checkTitleExistence() {
+  checkTitleExist() {
     const exists = this.contentItems.some(item => item.title.toLowerCase() === this.searchTitle.toLowerCase());
 
     if (exists) {

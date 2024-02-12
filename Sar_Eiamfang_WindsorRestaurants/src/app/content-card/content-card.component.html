@@ -1,7 +1,8 @@
 
 <div class="content-card" *ngIf="contentItem.imgURL !== ' '">
-
-  <img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL; else defaultImage" alt="{{ contentItem.title }}" class="content-card-image" height="200px">
+<!-- draw an element to the page -->
+  
+<img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL; else defaultImage" alt="{{ contentItem.title }}" class="content-card-image" height="200px">
         <ng-template #defaultImage>
           <img src="https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/367493201_689662176511345_176118293197415658_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=783fdb&_nc_ohc=tdj3D5_7nkoAX-S-24F&_nc_ht=scontent-ord5-1.xx&oh=00_AfBt6NpnasrgBHuKwOfdC3YHgAN_THg8juJtfDFMd3Ulzg&oe=65CE4E9C" 
           height="200px">
@@ -9,7 +10,8 @@
 
           <h2>{{ contentItem.title }}</h2>
           <p><strong>Description:</strong> {{ contentItem.description }}</p>
-          <p><strong>Creator:</strong> {{ contentItem.creator }}</p>
-          <p *ngIf="contentItem.type"><strong>Type: </strong>{{ contentItem.type }}</p>
+          <p><strong>Address:</strong> {{ contentItem.creator }}</p>
+          <!-- <p *ngIf="contentItem.type"><strong>Type: </strong>{{ contentItem.type }}</p> -->
+          <p *ngIf="contentItem.type" appHoverAffect><strong>Type: </strong>{{ contentItem.type }}</p>
           <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p>
 </div>

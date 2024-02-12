@@ -86,7 +86,7 @@ export class ContentListComponent implements OnInit {
         title: "Gladstone Common",
         description: "Contemporary, Pub, Fusion",
         creator: "792 Gladstone Ave",
-        imgURL: " ",
+        imgURL: "",
         type: "Casual",
         tags: ["Contemporary", "Pub", "Fusion"]
       }

@@ -89,7 +89,7 @@ export class ContentListComponent implements OnInit {
         imgURL: "",
         type: "Casual",
         tags: ["Contemporary", "Pub", "Fusion"]
-      }
+      } 
     ];
   }
 

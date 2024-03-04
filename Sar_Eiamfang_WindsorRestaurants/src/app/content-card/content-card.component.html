@@ -1,21 +1,22 @@
 
 <div class="content-card" *ngIf="contentItem.imgURL !== ' '">
-<!-- draw an element to the page -->
+  <!-- draw an element to the page -->
+    
+  <img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL; else defaultImage" alt="{{ contentItem.title }}" class="content-card-image" height="200px">
+          <ng-template #defaultImage>
+            <img src="https://www.freep.com/gcdn/presto/2021/08/06/PDTF/a80ae732-7235-4359-aad7-8bb59d46c2ea-bistro_on_the_river_2.jpg?width=1320&height=880&fit=crop&format=pjpg&auto=webp" 
+            height="200px">
+          </ng-template>
   
-<img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL; else defaultImage" alt="{{ contentItem.title }}" class="content-card-image" height="200px">
-        <ng-template #defaultImage>
-          <img src="https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/367493201_689662176511345_176118293197415658_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=783fdb&_nc_ohc=tdj3D5_7nkoAX-S-24F&_nc_ht=scontent-ord5-1.xx&oh=00_AfBt6NpnasrgBHuKwOfdC3YHgAN_THg8juJtfDFMd3Ulzg&oe=65CE4E9C" 
-          height="200px">
-        </ng-template>
-
-          <h2>{{ contentItem.title }}</h2>
-          <p><strong>Description:</strong> {{ contentItem.description }}</p>
-          <p><strong>Address:</strong> {{ contentItem.creator }}</p>
-          <!-- <p *ngIf="contentItem.type"><strong>Type: </strong>{{ contentItem.type }}</p> -->
-          <p *ngIf="contentItem.type" appHoverAffect><strong>Type: </strong>{{ contentItem.type }}</p>
-          <!-- <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p> -->
-          <p *ngIf="contentItem.tags && contentItem.tags.length > 0"> <strong>Tags: </strong>
-          <span *ngFor="let tag of contentItem.tags" appHoverAffect [affectType]="'bold'">{{ tag }}, </span>
-          </p>
-
-        </div>
+            <h2>{{ contentItem.title }}</h2>
+            <p><strong>Description:</strong> {{ contentItem.description }}</p>
+            <p><strong>Address:</strong> {{ contentItem.creator }}</p>
+            <!-- <p *ngIf="contentItem.type"><strong>Type: </strong>{{ contentItem.type }}</p> -->
+            <p *ngIf="contentItem.type" appHoverAffect><strong>Type: </strong>{{ contentItem.type }}</p>
+            <!-- <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p> -->
+            <p *ngIf="contentItem.tags && contentItem.tags.length > 0"> <strong>Tags: </strong>
+            <span *ngFor="let tag of contentItem.tags" appHoverAffect [affectType]="'bold'">{{ tag }}, </span>
+            </p>
+  
+          </div>
+  

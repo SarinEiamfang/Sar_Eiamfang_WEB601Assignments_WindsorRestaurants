@@ -4,12 +4,13 @@ import { Content } from '../helper-files/content-interface';
 import { ContentCardComponent } from '../content-card/content-card.component';  
 import { ContentTypeFilterPipe } from '../content-type-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { CreateContentComponent } from '../create-content/create-content.component'; 
 
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, ContentTypeFilterPipe, FormsModule],
+  imports: [CommonModule, ContentCardComponent, ContentTypeFilterPipe, FormsModule, CreateContentComponent],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -113,6 +114,13 @@ export class ContentListComponent implements OnInit {
       this.searchResultMessage = `No content item found with title '${this.searchTitle}'.`;
     }
   }
+
+  onContentCreated(newContent: any) {
+    // this.contentItems.push({ ...newContent }); // Clone the content and push it the list
+    this.contentItems = [...this.contentItems, newContent];
+  }
+
+
 
   
 }

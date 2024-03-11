@@ -4,6 +4,7 @@ import { Content } from '../helper-files/content-interface';
 import { ContentCardComponent } from '../content-card/content-card.component';  
 import { ContentTypeFilterPipe } from '../content-type-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { RestaurantService } from '../restaurant.service';
 
 
 @Component({
@@ -15,8 +16,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContentListComponent implements OnInit {
   @Input () contentItems: Content[] = []; 
+  contentService: any;
+
+  constructor(private restaurantService : RestaurantService){
+
+  } //inject service to my component
+ 
 
   ngOnInit():void {
+    // then get content from another source
+    this.contentItems = this.contentService.getContent
+
     // this.contentItems = [
     //   {
     //     id: 1,
@@ -93,6 +103,7 @@ export class ContentListComponent implements OnInit {
     // ];
   }
 
+  
   displayContentDetails(contentItem: Content): void {
     console.log(`ID: ${contentItem.id}, Title: ${contentItem.title}`);
   }

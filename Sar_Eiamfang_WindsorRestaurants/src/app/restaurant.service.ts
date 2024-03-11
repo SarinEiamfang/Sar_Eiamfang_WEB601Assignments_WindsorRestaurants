@@ -8,10 +8,11 @@ import { Content } from './helper-files/content-interface';
 export class RestaurantService {
 
   constructor() { }
-
+  
+  // only one function to return content (simulate database)
   getContent(): Content[] {
     return CONTENT;
     }
-  // return content (simulate database)
+
 
 }

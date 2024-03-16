@@ -1,6 +1,6 @@
-import { Content } from "./content-interface";
 
-export const CONTENT : Content [] = [
+
+export const CONTENT = [
     {
         id: 1,
         title: "Eddy's Mediterranean Bistro",

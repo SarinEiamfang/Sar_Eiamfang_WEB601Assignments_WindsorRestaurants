@@ -38,26 +38,24 @@ export class ContentListComponent implements OnInit {
   
   constructor(private restaurantService : RestaurantService, private messagesService:MessageService){ }
   
-
-
     ngOnInit() {
 
       /**
-       * nvoke this services function 
-       * in your ContentList in order to retrieve your array 
+       * add a subscription to our services 
+       * to retrive and process the data (content array)
        */
 
-      this.restaurantService.getContent().subscribe(
+      this.restaurantService.getContentObs().subscribe(
         content => this.contentItems = content
       );
-
-
 
 
       this.restaurantService.getContentById(4).subscribe(content=> this.items = content);
       console.log(this.items);
 
-    } //inject service to my component
+    } 
+    
+    //inject service to my component
 
 
     onSelect(content: Content):void{

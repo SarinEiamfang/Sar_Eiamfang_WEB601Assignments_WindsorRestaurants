@@ -1,5 +1,4 @@
 
-
 export const CONTENT = [
     {
         id: 1,

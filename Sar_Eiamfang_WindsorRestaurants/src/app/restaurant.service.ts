@@ -14,26 +14,17 @@ export class RestaurantService {
 
   constructor(private messageService:MessageService) { }
   
-  
-  // getContent(): Content[] {
-  //   return CONTENT;
-  // }
-
-
   /**
-   * @returns 
-   * Add a function to this service that will retrieve the content array from the contentDb file
-   * Return it using the obserable pattern
-   */
-  getContent():Observable<Content[]> {
+       * @returns 
+       * Add a function to this service that will retrieve the content array from the contentDb file
+       * Return it using the obserable pattern
+       */
+      getContentObs():Observable<Content[]> {
+        const contents = of(CONTENT);
+            this.messageService.add('Content Array Loaded!');
+        return contents;
 
-    const contents = of(CONTENT);
-    
-    this.messageService.add('Content Array Loaded!');
-
-    return contents;
-
-  }
+      }
 
 
   getContentById(id:number):Observable<any>{

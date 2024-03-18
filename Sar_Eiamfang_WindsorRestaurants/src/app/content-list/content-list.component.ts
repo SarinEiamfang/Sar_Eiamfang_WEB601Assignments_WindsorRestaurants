@@ -47,7 +47,7 @@ export class ContentListComponent implements OnInit {
        * in your ContentList in order to retrieve your array 
        */
 
-      this.restaurantService.getContentObs().subscribe(
+      this.restaurantService.getContent().subscribe(
         content => this.contentItems = content
       );
 

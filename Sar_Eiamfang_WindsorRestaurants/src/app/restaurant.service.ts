@@ -25,7 +25,7 @@ export class RestaurantService {
    * Add a function to this service that will retrieve the content array from the contentDb file
    * Return it using the obserable pattern
    */
-  getContentObs():Observable<Content[]> {
+  getContent():Observable<Content[]> {
 
     const contents = of(CONTENT);
     

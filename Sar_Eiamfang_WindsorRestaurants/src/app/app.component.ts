@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ContentListComponent } from './content-list/content-list.component';
 import { MessagesComponent } from './messages/messages.component';
+import { Content } from './helper-files/content-interface';
+import { RestaurantService } from './restaurant.service';
+import { MessageService } from './message.service';
 
 
 @Component({
@@ -14,5 +17,11 @@ import { MessagesComponent } from './messages/messages.component';
 })
 export class AppComponent {
   title = "Windsor Top Restaurants";
+
+  constructor(private restaurantService : RestaurantService, private messagesService : MessageService){ }
+
+  getContentById(num: number): Content {
+    return RestaurantService.getContentById(num);
+  }
   }
 

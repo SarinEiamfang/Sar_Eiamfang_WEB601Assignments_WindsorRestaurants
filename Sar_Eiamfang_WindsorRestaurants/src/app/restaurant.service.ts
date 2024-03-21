@@ -11,6 +11,9 @@ import { MessageService } from './message.service';
 })
 
 export class RestaurantService {
+  static getContentById(num: number): Content {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private messageService:MessageService) { }
   

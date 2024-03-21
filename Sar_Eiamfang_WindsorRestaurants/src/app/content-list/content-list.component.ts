@@ -36,7 +36,7 @@ export class ContentListComponent implements OnInit {
   selectedContent: Content | undefined;
 
   
-  constructor(private restaurantService : RestaurantService, private messagesService:MessageService){ }
+  constructor(private restaurantService : RestaurantService, private messagesService : MessageService){ }
   
     ngOnInit() {
 
@@ -50,7 +50,7 @@ export class ContentListComponent implements OnInit {
       );
 
 
-      this.restaurantService.getContentById(4).subscribe(content=> this.items = content);
+      this.restaurantService.getContentById(1).subscribe(content=> this.items = content);
       console.log(this.items);
 
     } 
@@ -60,7 +60,7 @@ export class ContentListComponent implements OnInit {
 
     onSelect(content: Content):void{
       this.selectedContent = content;
-      this.messagesService.add(`Content itme at ${content.id}`);
+      this.messagesService.add(`Content item at ${content.id}`);
       console.log("clicked");
     }
 

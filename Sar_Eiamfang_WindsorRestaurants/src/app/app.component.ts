@@ -10,10 +10,30 @@ import { MessageService } from './message.service';
 import { ContentCardComponent } from './content-card/content-card.component';
 
 
+// Assignment 7
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ContentListComponent, MessagesComponent, ContentCardComponent],
+  imports: [
+    CommonModule, 
+    RouterOutlet, 
+    ContentListComponent, 
+    MessagesComponent, 
+    ContentCardComponent,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule
+
+  // Code from Lecture shown the error 
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+    //   dataEncapsulation: false,
+    //   delay: 1000,
+    // });
+
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

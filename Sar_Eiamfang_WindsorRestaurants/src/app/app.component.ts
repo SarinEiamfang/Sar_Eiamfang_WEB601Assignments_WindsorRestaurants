@@ -14,28 +14,29 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { ModifyContentComponent } from "./modify-content/modify-content.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule, 
-    RouterOutlet, 
-    ContentListComponent, 
-    MessagesComponent, 
-    ContentCardComponent,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule
-
-  // Code from Lecture shown the error 
-    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-    //   dataEncapsulation: false,
-    //   delay: 1000,
-    // });
-
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        ContentListComponent,
+        MessagesComponent,
+        ContentCardComponent,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule
+        // Code from Lecture shown the error 
+        // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+        //   dataEncapsulation: false,
+        //   delay: 1000,
+        // });
+        ,
+        ModifyContentComponent
+    ]
 })
 export class AppComponent implements OnInit {
   title = "Windsor Top Restaurants";

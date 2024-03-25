@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { ContentCardComponent } from '../content-card/content-card.component';  
 import { ContentTypeFilterPipe } from '../content-type-filter.pipe';
@@ -10,10 +10,12 @@ import { RestaurantService } from '../restaurant.service';
 import { Observable } from 'rxjs';
 import { MessageService } from '../message.service';
 
+import { ModifyContentComponent } from '../modify-content/modify-content.component';
+
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, ContentTypeFilterPipe, FormsModule],
+  imports: [CommonModule, ContentCardComponent, ContentTypeFilterPipe, FormsModule, ContentCardComponent],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -21,19 +23,25 @@ import { MessageService } from '../message.service';
 export class ContentListComponent implements OnInit {
   
   @Input () contentItems: Content[] = []; 
-  
   @Input() items:Content[] = [];
+  @Output() contentAdded: EventEmitter<Content> = new EventEmitter<Content>(); // Event emitter for adding content
 
   
   searchTitle: string = '';
   searchResultMessage: string = '';
   contentExists: boolean = false;
-
-  // contentService: any;
-  
   id:any;
-  // selectedContent?: Content;
   selectedContent: Content | undefined;
+
+
+  newContent: Content = {
+    title: '',
+    description: '',
+    creator: '',
+    imgURL: '',
+    type: '',
+    tags: []
+  };
 
   
   constructor(private restaurantService : RestaurantService, private messagesService : MessageService){ }
@@ -84,6 +92,27 @@ export class ContentListComponent implements OnInit {
   }
 
 
+// -------------------------------------------
+
+// Assignment 7 
+// @Output() contentAdded: EventEmitter<Content> = new EventEmitter<Content>(); 
+// Event emitter for adding content
+  addContent() {
+    this.restaurantService.addContent(this.newContent).subscribe(newContent => {
+      this.contentAdded.emit(newContent); // Emit event after content is successfully added
+      this.messagesService.add('Content added successfully'); // Display message
+      this.newContent = { // Clear input fields
+        title: '',
+        description: '',
+        creator: '',
+        imgURL: '',
+        type: '',
+        tags: []
+      };
+    });
+  }
+
+// -------------------------------------------
   // ngOnInit():void {
   //   // then get content from another source
   //   this.contentItems = this.contentService.getContent

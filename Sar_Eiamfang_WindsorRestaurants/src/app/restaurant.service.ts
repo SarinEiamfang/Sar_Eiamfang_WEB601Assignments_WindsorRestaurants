@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CONTENT } from './helper-files/contentDb';
 import { Content } from './helper-files/content-interface';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { MessageService } from './message.service';
 
 // Assignment 7
@@ -26,15 +26,27 @@ export class RestaurantService {
 
   // Assignment 7
 
-  // Assuming your in-memory server base URL is 'api/content'
-  private apiUrl = 'api/CONTENT'; // Endpoint for content API
+  // Assuming your in-memory server base URL is 'api/Restaurant'
+  private apiURL = 'api/Restaurant'; // Endpoint for content API
+
+  private httpOptions = { // Define httpOptions
+    headers: new HttpHeaders({ 'Content-type': 'application/json' })
+  };
 
   constructor(private http:HttpClient, private messageService:MessageService) { }
   
 
   addContent(content: Content): Observable<Content> {
-    return this.http.post<Content>(this.apiUrl, CONTENT); 
+    return this.http.post<Content>(this.apiURL, content, this.httpOptions).pipe(
+      tap((newContent: Content) => {
+        this.messageService.add(`Content "${newContent.title}" added successfully!`);
+      })
+    ); 
+
+
   }
+
+  
 
    // end of Assignment 7
 

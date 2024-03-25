@@ -50,7 +50,7 @@ export class ContentListComponent implements OnInit {
       );
 
 
-      this.restaurantService.getContentById(1).subscribe(content=> this.items = content);
+      this.restaurantService.getContentById(6).subscribe(content=> this.items = content);
       console.log(this.items);
 
     } 

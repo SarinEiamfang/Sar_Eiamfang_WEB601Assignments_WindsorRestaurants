@@ -227,9 +227,16 @@
       </svg>
       <h1>🎉 {{ title }}</h1>
 
+      <!-- Assignment 6 -->
 
       <app-messages></app-messages>
-      <app-content-card [content]="getContentById(num)"></app-content-card>
+
+      <h2 style="color: #f102be;">This is the item display from single ID</h2>
+      <app-content-card [contentItem]="items" ></app-content-card>
+      
+
+      <!-- End of Assignment 6 -->
+      
       <app-content-list></app-content-list>
       
     </div>

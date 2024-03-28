@@ -5,19 +5,16 @@ import { CONTENT } from '../helper-files/contentDb';
 import { count } from 'rxjs';
 import { Content } from '../helper-files/content-interface';
 
-
 @Injectable({
   providedIn: 'root'
 })
+
 export class InMemoryDataService implements InMemoryDbService {
 
   // constructor() { }
 
   createDb() {
 
-    // setting it to the value of our array of content
-      
-    // Code from lecture, two line below
         const content : Content[] = CONTENT;
         return {content};
 

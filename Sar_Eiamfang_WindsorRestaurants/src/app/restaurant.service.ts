@@ -1,19 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { CONTENT } from './helper-files/contentDb';
 import { Content } from './helper-files/content-interface';
 import { Observable, of, tap } from 'rxjs';
 import { MessageService } from './message.service';
-
-// Assignment 7
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-//  --------------------------------
-
-
+import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 
 
 export class RestaurantService {
@@ -22,14 +20,11 @@ export class RestaurantService {
     throw new Error('Method not implemented.');
   }
 
-  //  --------------------------------
-
   // Assignment 7
 
-  // Assuming your in-memory server base URL is 'api/Restaurant'
-  private apiURL = 'api/Restaurant'; // Endpoint for content API
+  private apiURL = 'api/content'; 
 
-  private httpOptions = { // Define httpOptions
+  private httpOptions = { 
     headers: new HttpHeaders({ 'Content-type': 'application/json' })
   };
 
@@ -46,13 +41,7 @@ export class RestaurantService {
 
   }
 
-  
-
-   // end of Assignment 7
-
-  //  --------------------------------
-
-  /**
+    /**
        * @returns 
        * Add a function to this service that will retrieve the content array from the contentDb file
        * Return it using the obserable pattern

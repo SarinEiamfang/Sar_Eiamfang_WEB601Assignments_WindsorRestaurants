@@ -28,13 +28,7 @@ import { ModifyContentComponent } from "./modify-content/modify-content.componen
         MessagesComponent,
         ContentCardComponent,
         HttpClientModule,
-        HttpClientInMemoryWebApiModule
-        // Code from Lecture shown the error 
-        // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-        //   dataEncapsulation: false,
-        //   delay: 1000,
-        // });
-        ,
+        HttpClientInMemoryWebApiModule,
         ModifyContentComponent
     ]
 })
